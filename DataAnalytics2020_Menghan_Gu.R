@@ -85,3 +85,24 @@ EPI_South_Asia <- EPI[!No_surface_water]
 Esouth <- EPI_South_Asia[!is.na(EPI_South_Asia)]
 hist(EPI_South_Asia)
 hist(EPI_South_Asia, seq(30., 95., 1.0), prob=TRUE)
+
+
+install.packages("ggplot2")
+library(ggplot2)
+
+
+plot(ecdf(EPI_data$code),do.points=FALSE,verticals = TRUE) 
+plot(ecdf(EPI_data$code),do.points=TRUE,verticals = TRUE) # points are visible on the plot.
+par(pty="s")
+help("qqnorm") # read the RStudio documentation for qqnorm
+help("qqplot") # read the RStudio documentation for qqplot
+qqnorm(EPI_data$code)
+qqline(EPI_data$code) # adding the line on the Q-Q plot
+
+plot(ecdf(EPI_data$Population07),do.points=FALSE,verticals = TRUE) 
+plot(ecdf(EPI_data$Population07),do.points=TRUE,verticals = TRUE) # points are visible on the plot.
+par(pty="s")
+help("qqnorm") # read the RStudio documentation for qqnorm
+help("qqplot") # read the RStudio documentation for qqplot
+qqnorm(EPI_data$Population07)
+qqline(EPI_data$Population07) # adding the line on the Q-Q plot
