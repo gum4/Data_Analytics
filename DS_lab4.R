@@ -3,8 +3,8 @@ data(Titanic)
 str(Titanic)
 #install.packages("FNN")
 library(FNN)
-x = runif(1000,0,pi)#随机生成服从正态分布的100个随机数
-e = rnorm(1000,0,0.1)#随机生成100个随机数，均值是0，方差是0.1
+x = runif(1000,0,pi)
+e = rnorm(1000,0,0.1)
 y = sin(x)+e
 
 grid2=data.frame(x)
